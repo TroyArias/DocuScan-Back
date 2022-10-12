@@ -9,4 +9,4 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 app.use("/document", documentRouter);
 
-app.listen(3000, function () {console.log("Server running")});
+app.listen(3001, function () {console.log("Server running")});

@@ -30,4 +30,4 @@ export function delimeter (map, text) {
         });
   
       return user
-  }
+}

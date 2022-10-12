@@ -26,7 +26,8 @@ export const getDocument = async function (req, res) {
             let value = sheet.getCellByA1(`A${i}`).value;
             let data = sheet.getCellByA1(`B${i}`).value;
 
-            if(data != null && value != null) {
+            if(data != null && typeof(data) == 'string' && value != null) {
+
                 let text = data.split(TEXT_DELIMITER)
             
                 switch(value){
