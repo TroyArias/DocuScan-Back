@@ -65,7 +65,27 @@ export const getDocument = async function (req, res) {
     }
 };
 
+export const clearDocument = async function (req, res) {
+    try {
 
+        const doc = new GoogleSpreadsheet('1lSHNKt0Kj6_tokOjfmAt3lML7qXWXdgvT4eF87QaLNk');
+        
+        await doc.useServiceAccountAuth({
+            client_email: key.client_email,
+            private_key: key.private_key,
+          });
+          
+        await doc.loadInfo();
+        const sheet = doc.sheetsByIndex[0]
+        
+        await sheet.loadCells('A1:B30');
+        await sheet.clearRows()
 
+        return res.status(200).json();
+
+    } catch (e) {
+        return res.status(500).send(e);
+    }
+};
 
 
