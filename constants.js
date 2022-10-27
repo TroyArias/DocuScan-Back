@@ -4,6 +4,8 @@ export const WHITESPACE_DELIMITER = ' ';
 
 export const mapFor1Customer = [
     ['DAQ', 'driverLicense'],
+    ['DLDAQ', 'driverLicense'],
+    ['IDDAQ', 'driverLicense'],
     ['DBB', 'dateOfBirth'],
     ['DCG', 'placeOfBirth'],
     ['DCS', 'lastName'],
@@ -24,6 +26,8 @@ export const mapFor1Customer = [
   
   export const mapFor2Customer = [
     ['DAQ', 'driverLicense2'],
+    ['DLDAQ', 'driverLicense2'],
+    ['IDDAQ', 'driverLicense2'],
     ['DBB', 'dateOfBirth'],
     ['DCG', 'placeOfBirth'],
     ['DCS', 'lastName2'],
@@ -51,8 +55,7 @@ export const mapFor1Customer = [
     ['ZEC', 'weight'],
     ['VAO', 'vechBody'],
     ['BBCZEA', 'fuelType'],
-    ['FUL', 'fuelType'],
-    ['RAG', 'dateRegistExpiration'],
+    ['FUL', 'fuelType']
   ]
 
   export const mapForCertOfTitle = [
@@ -64,8 +67,7 @@ export const mapFor1Customer = [
     ['ZEC', 'weight'],
     ['VAO', 'vechBody'],
     ['BBCZEA', 'fuelType'],
-    ['FUL', 'fuelType'],
-    ['RAG', 'dateRegistExpiration'],
+    ['FUL', 'fuelType']
   ]
 
   export const key = {
