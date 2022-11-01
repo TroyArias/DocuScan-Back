@@ -1,16 +1,32 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import {TEXT_DELIMITER, mapFor1Customer, mapFor2Customer, mapForRegist, mapForCertOfTitle, key} from "../constants.js"
+import {TEXT_DELIMITER, mapFor1Customer, mapFor2Customer, mapForRegist, mapForCertOfTitle, key1} from "../constants.js"
 import {delimeter} from "../functions.js"
 
 export const getDocument = async function (req, res) {
     try {
-        
-        const doc = new GoogleSpreadsheet('1lSHNKt0Kj6_tokOjfmAt3lML7qXWXdgvT4eF87QaLNk');
-        
+
+        let doc
+
+        switch(req.headers.token){
+            case 'user1':
+                doc = new GoogleSpreadsheet('1lSHNKt0Kj6_tokOjfmAt3lML7qXWXdgvT4eF87QaLNk');
+                break;
+            case 'user2':
+                doc = new GoogleSpreadsheet('1cXr7ZrKa_6zLiIdsDUGhKOCIeCWEbmdX1Ejb3_yEsW0');
+                break
+            case 'user3':
+                doc = new GoogleSpreadsheet('1gHfMj1wKU433kAbnY3YTMAoZ_uedGRnzRvhgFjOZ2Nk');
+                break
+            case 'user4':
+                doc = new GoogleSpreadsheet('17rrUWIHzxv3D_68PYbGU-dTQkTvtVDsvvj99c7mnKB8');
+                break
+            default: throw "Incorrect token"
+        }
+    
         await doc.useServiceAccountAuth({
-            client_email: key.client_email,
-            private_key: key.private_key,
-          });
+            client_email: key1.client_email,
+            private_key: key1.private_key,
+        });
           
         await doc.loadInfo();
         const sheet = doc.sheetsByIndex[0]
@@ -68,11 +84,27 @@ export const getDocument = async function (req, res) {
 export const clearDocument = async function (req, res) {
     try {
 
-        const doc = new GoogleSpreadsheet('1lSHNKt0Kj6_tokOjfmAt3lML7qXWXdgvT4eF87QaLNk');
+        let doc
+
+        switch(req.headers.token){
+            case 'user1':
+                doc = new GoogleSpreadsheet('1lSHNKt0Kj6_tokOjfmAt3lML7qXWXdgvT4eF87QaLNk');
+                break;
+            case 'user2':
+                doc = new GoogleSpreadsheet('1cXr7ZrKa_6zLiIdsDUGhKOCIeCWEbmdX1Ejb3_yEsW0');
+                break
+            case 'user3':
+                doc = new GoogleSpreadsheet('1gHfMj1wKU433kAbnY3YTMAoZ_uedGRnzRvhgFjOZ2Nk');
+                break
+            case 'user4':
+                doc = new GoogleSpreadsheet('17rrUWIHzxv3D_68PYbGU-dTQkTvtVDsvvj99c7mnKB8');
+                break
+            default: throw "Incorrect token"
+        }
         
         await doc.useServiceAccountAuth({
-            client_email: key.client_email,
-            private_key: key.private_key,
+            client_email: key1.client_email,
+            private_key: key1.private_key,
           });
           
         await doc.loadInfo();

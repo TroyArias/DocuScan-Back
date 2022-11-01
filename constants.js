@@ -70,7 +70,7 @@ export const mapFor1Customer = [
     ['FUL', 'fuelType']
   ]
 
-  export const key = {
+  export const key1 = {
     "type": "service_account",
     "project_id": "aerobic-factor-363915",
     "private_key_id": "521eea7da5c2294b1afa896784a471eb6314b6d2",
