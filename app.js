@@ -11,4 +11,4 @@ app.use(express.json())
 app.use("/document", documentRouter);
 app.use("/auth", authRouter);
 
-app.listen(3000, function () {console.log("Server running")});
+app.listen( process.env.PORT || 3000, function () {console.log("Server running")});
